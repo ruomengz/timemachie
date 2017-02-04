@@ -1,0 +1,181 @@
+<!--   <title>Upload new File</title>
+    <h1>Upload new File</h1>
+
+<form action="{{ url_for('person') }}" method="post" enctype = "multipart/form-data">
+  <input type="text" name="time" placeholder="Time..."/>
+  <input type = "file" name = "file" />
+  <button type="submit">Save</button>
+</form>
+
+  <p>person id is {{ person }}</p>
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+     <link href="bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+
+
+            <!-----Navitagion>-->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Time Machine </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="#">Guess Who You Are</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container -->
+            </nav>
+
+             <!--page content-->
+
+             <div class="container">
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <h1>Guess Who you Are</h1>
+            <p>Visit our Website. You can upload your photo to our websites and guess your face is similar to which world influence people. Learn history in a personalized way!</p>
+
+             <title>Upload new File</title>
+                    <h4> Step one: Upload your photo </h4>
+                    <h4> Step two: Select the time period</h4>
+
+                <form action="{{ url_for('person') }}" method="post" enctype = "multipart/form-data">
+                  <input type="text" name="time" placeholder="Time..."/>
+                  <input type = "file" name = "file" />
+                  <button class="btn btn-primary btn-large" type="submit">Save</button>
+                </form>
+
+
+        </header>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Learn Fun Fact of Yourselves</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="https://wallazee.global.ssl.fastly.net/images/variant/20130718-4c5f89c87e65fb65ee28cd933a653ffed3b8fc17fe93d69f593b382-1024.png" style="height:800px, width=500px" alt="">
+                    <div class="caption">
+                        <h3>Create</h3>
+                        <p>Creae your photo and upload to the time machine</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img  src="https://wallazee.global.ssl.fastly.net/images/variant/20130718-4c5f89c87e65fb65ee28cd933a653ffed3b8fc17fe93d69f593b382-1024.png" style="height:800px, width=500px" alt="">
+                    <div class="caption">
+                        <h3>Imagine</h3>
+                        <p>Imagine your facial features, and think who is your ....</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="https://wallazee.global.ssl.fastly.net/images/variant/20130718-4c5f89c87e65fb65ee28cd933a653ffed3b8fc17fe93d69f593b382-1024.png" style="height:800px, width=500px" alt="">
+                    <div class="caption">
+                        <h3>Facial recognition </h3>
+                        <p>Predicting facial similarity between your and world influential people</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="https://wallazee.global.ssl.fastly.net/images/variant/20130718-4c5f89c87e65fb65ee28cd933a653ffed3b8fc17fe93d69f593b382-1024.png" style="height:800px, width=500px" alt="">
+                    <div class="caption">
+                        <h3>Learn</h3>
+                         <p>Learn history, social science and politics in a fun way.</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Designed by Ruomeng Zhang & Xiaoxue Du</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<!-- <div class="row">
+<div class="container">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+
+                 <title>Upload new File</title>
+                    <h4>Upload new File</h4>
+
+                <form action="{{ url_for('person') }}" method="post" enctype = "multipart/form-data">
+                  <input type="text" name="time" placeholder="Time..."/>
+                  <br>
+                  <input type = "file" name = "file" />
+                  <p></p>
+                  <button type="submit">Save</button>
+                </form>
+
+  <p>person id is {{ person }}</p>
+
+
+          </div>
+
+          <div class="col-md-2"></div>
+    </div> -->
+
+
+  </body>
+</html>
+
