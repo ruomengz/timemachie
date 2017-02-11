@@ -6,7 +6,7 @@ import cv2
 
 import sys
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from werkzeug.utils import secure_filename
 
 #from flask.ext.sqlalchemy import SQLAlchemy
@@ -16,6 +16,7 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.secret_key = 'many random bytes'
 
 #DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:////tmp/flask_app.db')
 
@@ -75,19 +76,22 @@ def person():
         file = request.files['file']
         # if user does not select file, browser also
         # submit a empty part without filename
-        if file.filename == '':
+        if file.filename == '' or request.form['time'] == "":
             flash('No selected file')
-            return redirect(request.url)
+            return redirect(url_for('index'))
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             time = request.form['time']
             person = findimg(int(time), filename)
             #print filename
+            if person == 0:
+                flash("No face detected")
+                return redirect(url_for('index'))
             return render_template('index.html', person=person)
     return redirect(url_for('index'))
 
-person = ""
+person = "who"
 with open("test.txt", "rb") as fp:   # Unpickling
     images = pickle.load(fp)
 
